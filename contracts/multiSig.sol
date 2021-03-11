@@ -58,7 +58,7 @@ constructor (address payable [] memory _owners, uint _required, string memory se
 
         for(uint i=0; i<owners.length; i++){
            isOwner[owners[i]] = true;
-         }
+           }
 
         assert(owners.length >= _required);
         }
@@ -269,7 +269,7 @@ function signExecutiveOrder(uint txid) public onlyOwners{
                 emit OwnerRemoved(removedOwner);
                 delete(removedOwner);
             }
-    }
+        }
 
 function lastResort(string memory secretPhrase) public onlyOwners{
 
@@ -282,4 +282,5 @@ function lastResort(string memory secretPhrase) public onlyOwners{
         }
 
         selfdestruct(msg.sender);
-    }
+        }
+}
